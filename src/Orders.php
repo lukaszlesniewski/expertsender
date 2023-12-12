@@ -50,54 +50,57 @@ class Orders
         return $request->delete();
     }
 
+    /*
+     * SETTERS FOR DATA
+     */
     
-    public function _setData(array $data) : void
+    public function setData(array $data) : void
     {
         $this->data = $data;
     }
     
-    public function _setCustomElement(string $name, mixed $value) : void
+    public function setCustomElement(string $name, mixed $value) : void
     {
         $this->data[$name] = $value;
     }
     
-    public function _setId(string $id) : void
+    public function setId(string $id) : void
     {
         $this->data['id'] = $id;
     }
     
-    public function _setDate(string $datetime) : void
+    public function setDate(string $datetime) : void
     {
         $data = str_replace(' ', 'T', date('Y-m-d H:i:s', strtotime($datetime))).'Z';
         $this->data['date'] = $date;
     }
     
-    public function _setTimeZone(string $timezone) : void
+    public function setTimeZone(string $timezone) : void
     {
         $this->data['timeZone'] = $timezone;
     }
     
-    public function _setWebsiteId(int $websiteId) : void
+    public function setWebsiteId(int $websiteId) : void
     {
         $this->data['websiteId'] = $websiteId;
     }
     
-    public function _setCurrency(string $currency) : void
+    public function setCurrency(string $currency) : void
     {
         $this->data['currency'] = $currency;
     }
     
-    public function _setTotalValue(string $totalVal) : void
+    public function setTotalValue(string $totalVal) : void
     {
         $this->data['totalValue'] = $totalVal;
     }
     
-    public function _setReturnsValue(string $returnsVal) : void
+    public function setReturnsValue(string $returnsVal) : void
     {
         $this->data['returnsValue'] = $returnsVal;
     }
     
-    public function _setCustomer(?string $email = null, ?string $phone = null, ?string $crmId = null)
+    public function setCustomer(?string $email = null, ?string $phone = null, ?string $crmId = null)
     {
         $data = [];
         if($email !== null) $data['email'] = $email;
@@ -107,13 +110,13 @@ class Orders
         $this->data['customer'] = $data;
     }    
     
-    public function _setProduct(array $product, array $productAttribs = [])
+    public function setProduct(array $product, array $productAttribs = [])
     {
         $product['productAttributes'] = $productAttribs;
         $this->data['products'][] = $product;
     }
     
-    public function _setOrderAttributes(string $name, string $value)
+    public function setOrderAttributes(string $name, string $value)
     {
         $this->data['orderAttributes'][] = ['name' => $name, 'value' => $value];
     }

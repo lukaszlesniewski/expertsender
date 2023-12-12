@@ -53,57 +53,62 @@ class Customers
         return $request->get();
     }
     
-    public function _setData(array $data) : void
+    
+    /*
+     * SETTERS FOR DATA
+     */
+    
+    public function setData(array $data) : void
     {
         $this->data = $data;
     }
     
-    public function _setCustomElement(string $name, mixed $value) : void
+    public function setCustomElement(string $name, mixed $value) : void
     {
         $this->data[$name] = $value;
     }
     
-    public function _setEmail(string $email) : void
+    public function setEmail(string $email) : void
     {
         $this->data['email'] = $email;
     }
     
-    public function _setPhone(string $phone) : void
+    public function setPhone(string $phone) : void
     {
         $this->data['phone'] = $phone;
     }
     
-    public function _setCrmId(string $id) : void
+    public function setCrmId(string $id) : void
     {
         $this->data['crmId'] = $id;
     }
     
-    public function _setFirstName(string $firstName) : void
+    public function setFirstName(string $firstName) : void
     {
         $this->data['firstName'] = $firstName;
     }
     
-    public function _setLastName(string $lastName) : void
+    public function setLastName(string $lastName) : void
     {
         $this->data['lastName'] = $lastName;
     }
     
-    public function _setCustomAttribute(string $name, mixed $value) : void
+    public function setCustomAttribute(string $name, mixed $value) : void
     {
         $this->data['customAttributes'][] = ['name' => $name, 'value' => $value];
     }
     
-    public function _setConsentsData(int $consentId, mixed $value) : void
+    public function setConsentsData(int $consentId, mixed $value) : void
     {
         $this->data['consentsData']['consents'][] = ['id' => $consentId, 'value' => $value];
     }
     
-    public function _setConsentsDataForce(bool $value) : void
+    public function setConsentsDataForce(bool $value) : void
     {
         $this->data['consentsData']['force'] = $value;
     }
     
-    public function _setConsentsDataConfirmationMessageId(int $value) : void
+    public function setConsentsDataConfirmationMessageId(int $value) : void
     {
         $this->data['consentsData']['confirmationMessageId'] = $value;
     }

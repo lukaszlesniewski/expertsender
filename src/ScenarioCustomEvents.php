@@ -23,42 +23,46 @@ class ScenarioCustomEvents
         return $request->post($this->data);
     }    
     
-    public function _setCustomEventId(int $customEventId) : void
+    /*
+     * SETTERS FOR DATA
+     */
+    
+    public function setCustomEventId(int $customEventId) : void
     {
         $this->data['customEventId'] = $customEventId;
     }
     
-    public function _setCustomerId(int $customerId) : void
+    public function setCustomerId(int $customerId) : void
     {
         $this->data['customerId'] = $customerId;
     }
     
-    public function _setCustomerEmail(string $customerEmail) : void
+    public function setCustomerEmail(string $customerEmail) : void
     {
         $this->data['customerEmail'] = $customerEmail;
     }
     
-    public function _setCustomerEmailMd5(string $customerEmailMd5) : void
+    public function setCustomerEmailMd5(string $customerEmailMd5) : void
     {
         $this->data['customerEmailMd5'] = $customerEmailMd5;
     }
     
-    public function _setCustomerEmailSha256(string $customerEmailSha256) : void
+    public function setCustomerEmailSha256(string $customerEmailSha256) : void
     {
         $this->data['customerEmailSha256'] = $customerEmailSha256;
     }
     
-    public function _setCustomerPhone(string $customerPhone) : void
+    public function setCustomerPhone(string $customerPhone) : void
     {
         $this->data['customerPhone'] = $customerPhone;
     }
 
-    public function _setCustomerCrmId(string $customerCrmId) : void
+    public function setCustomerCrmId(string $customerCrmId) : void
     {
         $this->data['customerCrmId'] = $customerCrmId;
     }
     
-    public function _setDataFields(string $name, string $type, string $value) : void
+    public function setDataFields(string $name, string $type, string $value) : void
     {
         $this->data['dataFields'][] = ['name' => $name, 'type' => $type, 'value' => $value];
     }
