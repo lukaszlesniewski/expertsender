@@ -13,7 +13,9 @@ class ExpertSenderProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__.'/config/expertsender.php' =>  config_path('expertsender.php'),
+        ], 'config');
     }
     
     public function register()
